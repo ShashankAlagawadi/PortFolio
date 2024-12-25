@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 25% 5%;
+    --foreground: 210 40% 98%;
+    
+    /* Deep space-inspired card backgrounds */
+    --card: 230 30% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 30% 8%;
+    --popover-foreground: 210 40% 98%;
+    
+    /* Vibrant purple-blue primary */
+    --primary: 262 83% 58%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Complementary teal accent */
+    --secondary: 171 68% 56%;
+    --secondary-foreground: 230 25% 5%;
+    
+    /* Subtle background elements */
+    --muted: 230 25% 12%;
+    --muted-foreground: 217 25% 70%;
+    
+    /* Bright accent for highlights */
+    --accent: 291 95% 58%;
+    --accent-foreground: 210 40% 98%;
+    
+    /* System colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 262 83% 58%;
+    
+    /* Highlight colors */
+    --highlight: 262 83% 58%;
+    --highlight-foreground: 210 40% 98%;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-violet-500 to-secondary;
+}
+
+.card-hover {
+  @apply transition-all duration-300 
+    hover:shadow-lg hover:shadow-purple-500/20 
+    hover:border-violet-500/30 
+    hover:translate-y-[-2px];
+}
+
+.bg-mesh {
+  background-color: hsl(230 25% 5%);
+  background-image: 
+    radial-gradient(at 40% 20%, hsla(262, 83%, 58%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(171, 68%, 56%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(291, 95%, 58%, 0.15) 0px, transparent 50%);
+}
+
+.nav-gradient {
+  background: linear-gradient(180deg, 
+    hsl(230 25% 5% / 0.95) 0%,
+    hsl(230 25% 5% / 0.8) 100%
+  );
+  backdrop-filter: blur(12px);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-purple-500 via-violet-500 to-secondary
+    text-white font-medium px-6 py-2 rounded-lg
+    transition-all duration-300
+    hover:shadow-lg hover:shadow-purple-500/25
+    active:scale-[0.98];
+}
+
+/* Input styles */
+.input-glow {
+  @apply border-violet-500/20 focus:border-violet-500
+    focus:ring-2 focus:ring-violet-500/20
+    bg-background/50;
+}
+
+/* Badge styles */
+.badge-glow {
+  @apply bg-muted text-secondary
+    border border-secondary/20
+    shadow-sm shadow-secondary/10;
+}
